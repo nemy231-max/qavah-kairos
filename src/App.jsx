@@ -16,7 +16,7 @@ const products = [
     price: "$60",
     description:
       "Bold kingdom-inspired streetwear for the chosen generation.",
-    image: "/images/heirs-to-the-kingdom.jpeg"
+    image: "/images/IMG_3723.png"
   }
 ];
 
@@ -149,7 +149,7 @@ export default function App() {
             }}
           >
             Qavah means to wait with hopeful expectation.
-            Kairos means God’s appointed time.
+            Kairos means God's appointed time.
             This brand exists for creators, warriors,
             and believers walking through the process
             before the promise.
