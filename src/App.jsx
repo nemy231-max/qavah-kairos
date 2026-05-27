@@ -3,21 +3,20 @@ import { useState } from "react";
 const products = [
   {
     id: 1,
-    name: "Heirs to the Unseen Kingdom Tee",
-    price: "$38",
-    description: "Vintage washed streetwear with bold spiritual typography."
+    name: "QAVAH KAIROS",
+    price: "$55",
+    description:
+      "Heavyweight vintage washed streetwear inspired by divine timing.",
+    image: "/images/Qavah-temple-.jpeg"
   },
+
   {
     id: 2,
-    name: "Adopted by the Almighty Hoodie",
-    price: "$62",
-    description: "Heavyweight comfort with statement back design."
-  },
-  {
-    id: 3,
-    name: "Kairos Waiting Room Cap",
-    price: "$28",
-    description: "A reminder of divine timing."
+    name: "Heirs to the Kingdom",
+    price: "$60",
+    description:
+      "Bold kingdom-inspired streetwear for the chosen generation.",
+    image: "/images/heirs-to-the-kingdom.jpeg"
   }
 ];
 
@@ -25,34 +24,108 @@ export default function App() {
   const [page, setPage] = useState("home");
 
   return (
-    <div style={{ background: "#000", color: "#fff", minHeight: "100vh", fontFamily: "Arial" }}>
-
-      {/* NAV */}
-      <div style={{ display: "flex", justifyContent: "space-between", padding: 20, borderBottom: "1px solid #333" }}>
+    <div
+      style={{
+        background: "#000",
+        color: "#fff",
+        minHeight: "100vh",
+        fontFamily: "Arial"
+      }}
+    >
+      
+      {/* NAVBAR */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          padding: 20,
+          borderBottom: "1px solid #333"
+        }}
+      >
         <strong>QAVAH KAIROS</strong>
+
         <div style={{ display: "flex", gap: 10 }}>
-          <button onClick={() => setPage("home")}>Home</button>
-          <button onClick={() => setPage("shop")}>Shop</button>
-          <button onClick={() => setPage("story")}>Story</button>
+          <button onClick={() => setPage("home")}>
+            Home
+          </button>
+
+          <button onClick={() => setPage("shop")}>
+            Shop
+          </button>
+
+          <button onClick={() => setPage("story")}>
+            Story
+          </button>
         </div>
       </div>
 
       {/* HOME */}
       {page === "home" && (
-        <div style={{ textAlign: "center", padding: 60 }}>
-          <h1>QAVAH KAIROS</h1>
-          <p>A brand rooted in God’s timing, purpose, and creativity.</p>
+        <div
+          style={{
+            textAlign: "center",
+            padding: 60
+          }}
+        >
+          <h1 style={{ fontSize: "4rem" }}>
+            QAVAH KAIROS
+          </h1>
+
+          <p style={{ color: "#aaa" }}>
+            Streetwear rooted in purpose, patience, and divine timing.
+          </p>
         </div>
       )}
 
       {/* SHOP */}
       {page === "shop" && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 20, padding: 20 }}>
-          {products.map(p => (
-            <div key={p.id} style={{ border: "1px solid #333", padding: 15 }}>
-              <h3>{p.name}</h3>
-              <p style={{ color: "#aaa" }}>{p.description}</p>
-              <strong>{p.price}</strong>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit,minmax(250px,1fr))",
+            gap: 20,
+            padding: 20
+          }}
+        >
+          {products.map((p) => (
+            <div
+              key={p.id}
+              style={{
+                border: "1px solid #333",
+                padding: 15,
+                background: "#111"
+              }}
+            >
+              <img
+                src={p.image}
+                alt={p.name}
+                style={{
+                  width: "100%",
+                  marginBottom: 15
+                }}
+              />
+
+              <h2>{p.name}</h2>
+
+              <p style={{ color: "#aaa" }}>
+                {p.description}
+              </p>
+
+              <h3>{p.price}</h3>
+
+              <button
+                style={{
+                  background: "#fff",
+                  color: "#000",
+                  border: "none",
+                  padding: "10px 20px",
+                  cursor: "pointer",
+                  marginTop: 10
+                }}
+              >
+                Add to Cart
+              </button>
             </div>
           ))}
         </div>
@@ -60,14 +133,29 @@ export default function App() {
 
       {/* STORY */}
       {page === "story" && (
-        <div style={{ padding: 40, maxWidth: 600, margin: "auto" }}>
+        <div
+          style={{
+            padding: 40,
+            maxWidth: 700,
+            margin: "auto"
+          }}
+        >
           <h2>Our Story</h2>
-          <p style={{ color: "#aaa" }}>
-            Qavah means to wait with expectation. Kairos means appointed time.
+
+          <p
+            style={{
+              color: "#aaa",
+              lineHeight: 1.7
+            }}
+          >
+            Qavah means to wait with hopeful expectation.
+            Kairos means God’s appointed time.
+            This brand exists for creators, warriors,
+            and believers walking through the process
+            before the promise.
           </p>
         </div>
       )}
-
     </div>
   );
 }
